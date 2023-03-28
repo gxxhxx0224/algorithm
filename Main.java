@@ -1,3 +1,4 @@
+//구현/실버 5/4673 셀프넘버
 public class Main {
     public static void main(String[] args) {
         boolean[] chk = new boolean[10001];
