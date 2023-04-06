@@ -11,7 +11,8 @@ public class GroupWordChecker {
             if(check()){
                 count++;
             }
-        }System.out.print(count);
+        }br.close();
+        System.out.print(count);
     }
     public static boolean check() throws IOException{
         boolean[]check=new boolean[26];
@@ -31,5 +32,3 @@ public class GroupWordChecker {
         }return true;
     }
 }
-
-
