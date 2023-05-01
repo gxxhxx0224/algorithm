@@ -1,69 +1,39 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Stack;
 
-public class Parenthesis {
-    static int MAX=50;
-    static boolean check=true;
-
-    static String stack[]=new String [MAX];
-    static int top;
-
-    static void push(String item) {
-        stack[top] = item;
-        top++;
-    }
-    static void pop(){
-        if(top>0) {
-            top--;
-            stack[top] = "";
-        }
-        else{
-            check=false;
-        }
-    }
-    static boolean isEmpty() {
-        if(top==0) {
-            return true;
-        }
-        return false;
-    }
-    static void clear(){
-        if(top!=0){
-            while(top==0){
-                top--;
-                stack[top]="";
-            }
-        }
-    }
-
-    public static void main(String[] args) throws IOException,ArrayIndexOutOfBoundsException {
+public class Parenthesis{
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int T=Integer.parseInt(br.readLine()); //테스트의 개수
+        int t=Integer.parseInt(br.readLine()); //테스트 수
 
-        for(int i=0;i<T;i++){
-            String s=br.readLine(); //괄호입력
-            top=0;
-            //pop연산으로 top이 0밑으로 떨어질때 ArrayIndexOutOfBoundsException이 발생해서 boolean형 check 도입
-            check=true;
+        StringBuilder sb=new StringBuilder();
 
-            for(int j=0;j<s.length();j++){
-                if(s.charAt(j)=='('){ // '('일경우 push
-                    push("*");
-                }
-                else if(s.charAt(j)==')'){ //')' 일경우 pop
-                    pop();
-                }
-            }
-            if(isEmpty() && check==true) {
-                System.out.println("YES"); //비었을경우 올바른 괄호 문자열일 경우
-                clear();
-            }
+        for(int i=0;i<t;i++){
+            String s=br.readLine();
+            sb.append(solve(s)).append("\n");
 
-            else if(!isEmpty() || check==false){
-                System.out.println("NO"); //올바른 괄호 문자열 아닐 경우
-                clear();
-            }
-        } br.close();
+        }br.close();
+
+        System.out.println(sb);
+
+    }
+    public static String solve(String s){
+        Stack<Character> stack=new Stack<>();
+
+        for(int i=0;i<s.length();i++){
+            char c=s.charAt(i);
+
+            if(c=='(') stack.push(c); // '('일 경우 스택에 push
+
+            else if(stack.empty()) return "NO"; //스택이 비었는데 ')'을 입력받아 pop할 원소가 없는데도 pop을 해야하는 경우
+
+            else stack.pop(); //정상적으로 ')'인 경우 pop
+
+        }
+        if(stack.empty()) return "YES";
+
+        else return "NO";
     }
 }
