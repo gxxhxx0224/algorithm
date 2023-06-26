@@ -1,0 +1,13 @@
+import java.util.Scanner;
+
+public class Constant {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a=sc.nextInt(),b= sc.nextInt();;
+
+        a = Integer.parseInt(new StringBuilder(a).append(a).reverse().toString());
+        b = Integer.parseInt(new StringBuilder(b).append(b).reverse().toString());
+
+        System.out.println(a > b ? a : b);
+    }
+}
