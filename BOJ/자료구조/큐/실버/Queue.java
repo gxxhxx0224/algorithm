@@ -76,7 +76,6 @@ public class Queue{
 
         return queue[0]; //맨 앞 출력
     }
-
     public static int back(){
         if(size==0) return -1; //비었으면 -1
 
