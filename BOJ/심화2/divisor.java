@@ -9,6 +9,7 @@ public class divisor {
         int n=Integer.parseInt(br.readLine());
         int divisor[] = new int[n];
         StringTokenizer st = new StringTokenizer(br.readLine());
+        
         br.close();
 
         int min=Integer.MAX_VALUE;
@@ -18,10 +19,8 @@ public class divisor {
             divisor[i] = Integer.parseInt(st.nextToken());
             min = Math.min(min, divisor[i]);
             max = Math.max(max, divisor[i]);
-        }
-        StringBuilder sb = new StringBuilder();
+        }StringBuilder sb = new StringBuilder();
         sb.append(min * max);
         System.out.print(sb);
-
     }
 }
