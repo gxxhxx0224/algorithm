@@ -9,7 +9,7 @@ public class fibonacci{
         br.close();
         System.out.print(fibonacci(n));
     }
-    //for문을 이용한 피보나치
+    //for문을 이용한 피보나치.
     static int fibonacci(int n){
         if(n<=1) return n;
         int fibo[]=new int[n+1]; //n까지의 수를 나타내야 하므로 n+1크기의 배열
