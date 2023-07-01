@@ -14,7 +14,7 @@ public class divisor {
 
         int min=Integer.MAX_VALUE;
         int max = Integer.MIN_VALUE;
-
+        
         for(int i=0;i<n;i++){
             divisor[i] = Integer.parseInt(st.nextToken());
             min = Math.min(min, divisor[i]);
