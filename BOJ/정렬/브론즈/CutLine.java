@@ -11,9 +11,9 @@ public class CutLine {
         st=new StringTokenizer(br.readLine());
         br.close();
         int x[]=new int[n]; //학생의 점수가 들어갈 배열
-        for(int i=0;i<n;i++) x[i]=Integer.parseInt(st.nextToken());
+        for(int i=0;i<n;i++) x[i]=Integer.parseInt(st.nextToken()); //값 입력
 
-        Arrays.sort(x);
+        Arrays.sort(x); //정렬
         System.out.print(x[n-k]);
         }
     }
