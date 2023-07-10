@@ -9,7 +9,7 @@ public class NumberSort3 {
         for(int i=0;i<n;i++){
             count[Integer.parseInt(br.readLine())]++;
         }br.close();
-        StringBuilder sb=new StringBuilder();   //결과 저장
+        StringBuilder sb=new StringBuilder();   //결과 저장.
 
         for(int i=1;i<count.length;i++){
             while(count[i]>0){
