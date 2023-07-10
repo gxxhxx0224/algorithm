@@ -12,7 +12,7 @@ public class ThreeNumbers {
         int n[]=new int[3]; //세 정수가 들어갈 배열
 
         for(int i=0;i<3;i++){
-            n[i]=Integer.parseInt(st.nextToken());
+            n[i]=Integer.parseInt(st.nextToken()); //값 입력
         }
         Arrays.sort(n); //오름차순 정렬
         System.out.print(n[1]); //두번째 큰 수 출력
