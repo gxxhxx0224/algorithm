@@ -9,7 +9,7 @@ public class SortInside {
         int[]count=new int[10]; //1,000,000,000 보다 작거나 같으므로 각자릿수 10개
         br.close();
 
-        while(n!=0){
+        while(n!=0){ //카운팅 정렬
             count[n%10]++;
             n/=10;
         }
