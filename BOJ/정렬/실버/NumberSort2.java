@@ -10,7 +10,7 @@ public class NumberSort2 {
         StringBuilder sb = new StringBuilder();
         int n = Integer.parseInt(br.readLine()); //수 입력
 
-        ArrayList<Integer> list = new ArrayList<>();
+        ArrayList<Integer> list = new ArrayList<>(); 
 
         for (int i = 0; i < n; i++) list.add(Integer.parseInt(br.readLine()));
         br.close();
