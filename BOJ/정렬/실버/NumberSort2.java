@@ -8,7 +8,7 @@ public class NumberSort2 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
-        int n = Integer.parseInt(br.readLine());
+        int n = Integer.parseInt(br.readLine()); //수 입력
 
         ArrayList<Integer> list = new ArrayList<>();
 
