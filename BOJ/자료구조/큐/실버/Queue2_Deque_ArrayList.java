@@ -18,7 +18,6 @@ public class Main{
 
         for(int i=0;i<n;i++){
             StringTokenizer st = new StringTokenizer(br.readLine());
-
             switch (st.nextToken()) {
                 case "push":
                     q.offer(Integer.parseInt(st.nextToken()));
