@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class NansM_5 {
+public class NandM_5 {
     static int n,m, num[],arr[];
     static boolean check[];
     static StringBuilder sb;
