@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class WordSplitter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // 단어 입력
+        String word = scanner.nextLine();
+        
+        // 10글자씩 출력
+        for (int i = 0; i < word.length(); i += 10) {
+            int end = Math.min(i + 10, word.length());
+            System.out.println(word.substring(i, end));
+        }
+        
+        scanner.close();
+    }
+}
