@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         
-        // 재환이가 낼 수 있는 "aaah"와 의사가 원하는 "aah"를 입력받는다
+        // 재환이가 낼 수 있는 "aaah"와 의사가 원하는 "aah"를 입력
         String jaeHwan = sc.nextLine();
         String doctor = sc.nextLine();
         
