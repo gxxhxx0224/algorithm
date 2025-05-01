@@ -10,7 +10,7 @@ public class Main {
 
         int team = 0;
 
-        // 인턴을 고려해 최대 팀 수 계산
+        // 인턴을 고려해 최대 팀 수 계산함
         while (N >= 2 && M >= 1 && N + M - K >= 3) {
             N -= 2;
             M -= 1;
