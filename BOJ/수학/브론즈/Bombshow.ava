@@ -1,0 +1,30 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+import java.util.StringTokenizer;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        int N = Integer.parseInt(st.nextToken()); // 학생 수
+        int C = Integer.parseInt(st.nextToken()); // 폭죽쇼 끝나는 시간
+
+        boolean[] firework = new boolean[C + 1]; // 1초부터 C초까지 기록
+
+        for (int i = 0; i < N; i++) {
+            int period = Integer.parseInt(br.readLine());
+            for (int t = period; t <= C; t += period) {
+                firework[t] = true;
+            }
+        }
+
+        int count = 0;
+        for (int i = 1; i <= C; i++) {
+            if (firework[i]) count++;
+        }
+
+        System.out.println(count);
+    }
+}
