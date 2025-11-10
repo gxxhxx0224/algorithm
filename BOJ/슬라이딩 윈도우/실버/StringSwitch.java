@@ -1,26 +1,29 @@
 import java.io.*;
 import java.util.*;
 
-//1522 S1 '문자열 교환'
+//1522 S1 '문자열 교환'- 슬라이딩 윈도우
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String s=br.readLine();
+        String str=br.readLine();
 
-        //a의 길이 구하기
-        int aCount=0;
-        for(int i=0;i<s.length();i++){
-            if(s.charAt(i)=='a') aCount++;
+        int a=0;
+        for(int i=0;i<str.length();i++){
+            if(str.charAt(i)=='a') a++;
         }
 
-        int min=Integer.MAX_VALUE;
-        for(int i=0;i<s.length();i++){
-            int bCount=0;
-            for(int j=i;j<aCount+i;j++){
-                //a길이 만큼에서 들어가는 b의 최소 길이=교환회수의 최소값
-                if(s.charAt(j%s.length())=='b') bCount++;
-            }
-            min=Math.min(min,bCount);
+        //첫번째 슬라이드
+        int b=0;
+        for(int i=0;i<a;i++)
+            if(str.charAt(i)=='b') b++;
+
+        int min=b;
+
+        for(int i=1;i<str.length();i++){
+            if(str.charAt(i-1)=='b') b--;
+            if(str.charAt((i+a-1)%str.length())=='b') b++;
+
+            min=Math.min(min,b);
         }
         System.out.print(min);
     }
